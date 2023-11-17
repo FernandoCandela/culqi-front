@@ -15,7 +15,7 @@
 
     <div v-if="responseData" class="mt-4">
       <h3>Infomracion Recibida:</h3>
-      <p>{{ responseData }}</p>
+      <textarea v-model="responseData" class="form-control" rows="5"></textarea>
     </div>
   </div>
 </template>
@@ -40,11 +40,14 @@ export default {
   methods: {
     enviarToken() {
 
-      this.responseData = this.token;
+      const bearerToken = this.$store.state.bearerToken;
+      const headers = {
+        Authorization: `Bearer ${bearerToken}`,
+      };
 
-      axios.post('http://localhost:3000/charges ', {token: this.token})
+      axios.post('http://localhost:3000/charges ', {token: this.token}, {headers})
           .then(response => {
-            this.responseData = response.data;
+            this.responseData = JSON.stringify(response.data, null, 2);
           })
           .catch(error => {
             console.error('Error al enviar token:', error);
