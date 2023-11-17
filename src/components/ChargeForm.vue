@@ -10,7 +10,7 @@
 
       <!-- Agrega otros campos del formulario según sea necesario -->
 
-      <button type="submit" class="btn btn-primary">Enviar Token</button>
+      <button type="submit" class="btn btn-primary">Consultar</button>
     </form>
 
     <div v-if="responseData" class="mt-4">

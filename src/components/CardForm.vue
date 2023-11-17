@@ -27,18 +27,13 @@
         <input v-model="email" type="email" class="form-control" id="email" required>
       </div>
 
-      <div class="mb-3">
-        <label for="bearerToken">Token de acceso (Bearer)</label>
-        <input v-model="bearerToken" type="text" class="form-control" id="bearerToken" required>
-      </div>
-
       <!-- Agrega otros campos del formulario según sea necesario -->
 
       <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 
     <div v-if="token" class="mt-4">
-      <h3>Token recibido:</h3>
+      <h3>Token valido por 15 min:</h3>
       <p>{{ token }}</p>
     </div>
   </div>
@@ -57,14 +52,14 @@ export default {
       expirationMonth: '',
       expirationYear: '',
       email: '',
-      bearerToken: '',
       token: null,
     };
   },
   methods: {
     enviarDatos() {
+      const bearerToken = this.$store.state.bearerToken;
       const headers = {
-        Authorization: `Bearer ${this.bearerToken}`,
+        Authorization: `Bearer ${bearerToken}`,
       };
 
       axios.post('http://localhost:3000/tokens', {

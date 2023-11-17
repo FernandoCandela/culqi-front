@@ -2,7 +2,7 @@
   <div id="app">
     <div class="d-flex flex-column align-items-center">
       <!-- Componente para ingresar el token -->
-      <TokenInput formTitle="Formulario 1"/>
+      <TokenPKInput formTitle="Formulario 1"/>
 
       <!-- Formulario CardForm 1 -->
       <CardForm formTitle="Formulario 1"/>
@@ -14,7 +14,7 @@
       <div style="height: 20px;"></div>
 
       <!-- Formulario TokenForm -->
-      <ChargeForm formTitle="Formulario de Token"/>
+      <ChargeForm formTitle="Consultar Token"/>
     </div>
   </div>
 </template>
@@ -22,7 +22,7 @@
 <script>
 import CardForm from '../src/components/CardForm.vue';
 import ChargeForm from "./components/ChargeForm.vue";
-import TokenInput from "./components/TokenPKInput.vue";
+import TokenPKInput from "./components/TokenPKInput.vue";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -30,7 +30,7 @@ export default {
   components: {
     ChargeForm,
     CardForm,
-    TokenInput,
+    TokenPKInput,
   },
 };
 </script>

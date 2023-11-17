@@ -5,7 +5,7 @@
       <label for="bearerToken">Token de acceso (Bearer)</label>
       <input v-model="bearerToken" type="text" class="form-control" id="bearerToken" required>
     </div>
-    <button @click="setToken" class="btn btn-primary">Guardar Token</button>
+    <button @click="setToken" class="btn btn-primary">Guardar PK Token</button>
   </div>
 </template>
 
@@ -21,6 +21,7 @@ export default {
   methods: {
     ...mapMutations(['setBearerToken']),
     setToken() {
+      console.log("savePK",this.bearerToken);
       this.setBearerToken(this.bearerToken);
     },
   },
