@@ -14,12 +14,12 @@
 
       <div class="mb-3">
         <label for="expirationMonth">Mes de vencimiento</label>
-        <input v-model="expirationMonth" type="text" class="form-control" id="expirationMonth" required>
+        <input v-model="expirationMonth" type="text" class="form-control" maxlength="2" id="expirationMonth" required>
       </div>
 
       <div class="mb-3">
         <label for="expirationYear">Año de vencimiento</label>
-        <input v-model="expirationYear" type="text" class="form-control" id="expirationYear" required>
+        <input v-model="expirationYear" type="text" class="form-control" maxlength="4" id="expirationYear" required>
       </div>
 
       <div class="mb-3">
@@ -43,6 +43,7 @@
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importar el archivo CSS de Bootstrap
 import Swal from 'sweetalert2';
+import app from "../App.vue";
 
 export default {
   data() {
@@ -61,8 +62,10 @@ export default {
       const headers = {
         Authorization: `Bearer ${bearerToken}`,
       };
-
-      axios.post('http://localhost:3000/tokens', {
+      const apiUrl = window.apiUrl;
+      const tokenEndpoint = '/tokens';
+      const fullApiUrl = apiUrl + tokenEndpoint;
+      axios.post(fullApiUrl, {
         cardNumber: this.cardNumber,
         cvv: this.cvv,
         expirationMonth: this.expirationMonth,

@@ -45,7 +45,10 @@ export default {
         Authorization: `Bearer ${bearerToken}`,
       };
 
-      axios.post('http://localhost:3000/charges ', {token: this.token}, {headers})
+      const apiUrl = window.apiUrl;
+      const tokenEndpoint = '/charges';
+      const fullApiUrl = apiUrl + tokenEndpoint;
+      axios.post(fullApiUrl, {token: this.token}, {headers})
           .then(response => {
             this.responseData = JSON.stringify(response.data, null, 2);
           })

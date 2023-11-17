@@ -1,20 +1,19 @@
 <template>
   <div id="app">
     <div class="d-flex flex-column align-items-center">
-      <!-- Componente para ingresar el token -->
-      <TokenPKInput formTitle="Formulario 1"/>
 
-      <!-- Formulario CardForm 1 -->
-      <CardForm formTitle="Formulario 1"/>
+      <div class="row border p-4">
+        <TokenPKInput formTitle="Formulario 1"/>
+      </div>
+      <div class="row border my-3 p-4 col-12">
+        <div class="col-6">
+          <CardForm formTitle="Formulario 1"/>
+        </div>
+        <div class="col-6">
+          <ChargeForm formTitle="Consultar Token"/>
+        </div>
+      </div>
 
-      <!-- Espacio entre los formularios -->
-      <div style="height: 20px;"></div>
-
-      <!-- Espacio entre CardForm y TokenForm -->
-      <div style="height: 20px;"></div>
-
-      <!-- Formulario TokenForm -->
-      <ChargeForm formTitle="Consultar Token"/>
     </div>
   </div>
 </template>
@@ -26,6 +25,7 @@ import TokenPKInput from "./components/TokenPKInput.vue";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+window.apiUrl = 'http://localhost:3000';
 export default {
   components: {
     ChargeForm,
