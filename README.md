@@ -22,7 +22,7 @@ window.apiUrl = 'http://localhost:3000';
 ```
 ## Ejecución del proyecto
 
-Para iniciar el servidor de desarrollo, ejecuta `npm run serve`. Esto iniciará el servidor en `http://localhost:8080`.
+Para iniciar el servidor de desarrollo, ejecuta `npm run dev`. Esto iniciará el servidor en `http://localhost:8080`.
 
 Abre tu navegador y navega a `http://localhost:5173` para ver la aplicación en ejecución.
 
