@@ -10,7 +10,7 @@ Front end para consumir la API de tokenización de tarjetas.
 ## Configuración del entorno local
 
 1. Clona el repositorio en tu máquina local usando `git clone https://github.com/FernandoCandela/culqi-front.git`.
-2. Navega al directorio del proyecto con `cd nombre-del-repositorio`.
+2. Navega al directorio del proyecto con `cd culqi-front`.
 3. Instala las dependencias del proyecto con `npm install`.
 
 ## Variables de entorno
